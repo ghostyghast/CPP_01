@@ -6,11 +6,13 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 19:26:58 by amaligno          #+#    #+#             */
-/*   Updated: 2023/11/14 19:42:52 by amaligno         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:36:10 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
+# include <string>
 
 class Weapon {
 	private :
@@ -23,3 +25,5 @@ class Weapon {
 		void				setType(std::string new_type);
 		
 };
+
+#endif

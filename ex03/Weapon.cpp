@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 19:11:44 by amaligno          #+#    #+#             */
-/*   Updated: 2023/11/14 19:51:50 by amaligno         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:09:03 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ Weapon::~Weapon()
 
 const string	&Weapon::getType(void)
 {
-	const string	&ref = _type;
 	return(_type);
 }
 

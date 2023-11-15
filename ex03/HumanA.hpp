@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 19:17:41 by amaligno          #+#    #+#             */
-/*   Updated: 2023/11/14 19:55:40 by amaligno         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:07:45 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ class HumanA {
 				HumanA(std::string name, Weapon &weapon);
 				~HumanA();
 		
-		Weapon	getWeapon(void);
-		void	setWeapon(Weapon weapon);
+		void	setWeapon(Weapon &weapon);
 		void	attack(void);
 		
 	
