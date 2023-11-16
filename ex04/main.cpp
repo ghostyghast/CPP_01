@@ -3,18 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaligno <antoinemalignon@yahoo.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 19:38:21 by amaligno          #+#    #+#             */
-/*   Updated: 2023/11/16 22:11:48 by amaligno         ###   ########.fr       */
+/*   Updated: 2023/11/17 02:34:28 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sed.hpp"
 
-void	replace(string line, string s1, string s2, std::ofstream &new_file)
+void	replace(string line, string s1, string s2)
 {
+	size_t	pos;
 	
+	while ((pos = line.find(s1)) != string::npos)		
+	{
+		line.erase(pos, s1.length());
+		line.insert(pos, s2);
+	}
 }
 
 int	main(int c, char **argv)
@@ -28,7 +34,8 @@ int	main(int c, char **argv)
 	std::ifstream file;
 	std::ofstream new_file;
 	file.open(argv[1]);
-	new_file.open(string(argv[1]) + ".replace");
+	const string name = string(argv[1]) + ".replace";
+	new_file.open(name.c_str());
 	if (!file.is_open())
 	{
 		cout << "File given does not exist\n";
@@ -41,6 +48,12 @@ int	main(int c, char **argv)
 	}
 	string str;
 	while (getline(file, str))
-		replace(str, argv[2], argv[3], new_file);
+	{
+		replace(str, argv[2], argv[3]);
+		if (file.eof())
+			new_file << str;
+		else
+			new_file << str << '\n';
+	}
 	file.close();
 }
