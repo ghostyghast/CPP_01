@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaligno <antoinemalignon@yahoo.com>       +#+  +:+       +#+        */
+/*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 03:13:57 by amaligno          #+#    #+#             */
-/*   Updated: 2023/11/17 03:34:39 by amaligno         ###   ########.fr       */
+/*   Updated: 2023/11/17 19:28:16 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,14 @@
 using   std::cout;
 using   std::string;
 
-enum {
-    INFO = "info";
-    
-}
-
 int main(int c, char **argv)
 {
     Harl harl;
-    string  level = argv[1];
-    switch (level[i])
+
+    if (c != 2)
     {
-    case 'i'
-    
-    case 
-        cout <<
-        break;
-    
-    default:
-        cout << "[ Probably complaining about insignificant problems ]\n";
-        break;
+        cout << "Invalid arg amount\n";
+        return (0);        
     }
+    harl.complain(argv[1]);
 }
