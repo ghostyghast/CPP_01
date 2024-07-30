@@ -21,6 +21,8 @@ int main(void)
 	//Allocating it on heap thus allows the data to exist for the entire
 	//runtime of the program, until it is freed //
 	Zombie	*heap_zombie = newZombie("Heap_Zombie");
+	stack_zombie.announce();
+	heap_zombie->announce();
 
 	randomChump("Chump");
 	delete heap_zombie;
