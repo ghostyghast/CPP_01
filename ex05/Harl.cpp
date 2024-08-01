@@ -41,7 +41,7 @@ void    Harl::error(void)
 
 void    Harl::complain(string level)
 {
-    void    (Harl::* func[4]) (void) = {&Harl::info, &Harl::debug, &Harl::warning, &Harl::error};
+    void    (Harl::*func[4]) (void) = {&Harl::info, &Harl::debug, &Harl::warning, &Harl::error};
     string  levels[4] = {"info", "debug", "warning", "error"};
 
     for (int i = 0; i < 4; i++)
