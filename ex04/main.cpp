@@ -55,10 +55,9 @@ int	main(int c, char **argv)
 	while (getline(file, str))
 	{
 		ft_replace(str, argv[2], argv[3]);
-		if (file.eof())
-			new_file << str;
-		else
-			new_file << str << '\n';
+		new_file << str;
+		if (!file.eof())
+			new_file << '\n';
 	}
 	file.close();
 }
