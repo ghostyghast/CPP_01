@@ -28,7 +28,11 @@ int	main()
 	cin >> input;
 	
 	while (atoi(input.c_str()) <= 0)
+	{
+		cout << "Number is equal or less than 0, try again\n"
+			 << ">>";
 		cin >> input;
+	}
 	cout << "Name your horde\n"
 		 << ">> ";
 	cin >> name;
