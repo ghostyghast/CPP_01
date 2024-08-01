@@ -10,12 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sed.hpp"
+#include <iostream>
+#include <string>
+#include <fstream>
+using std::string;
+using std::ios;
+using std::cout;
 
-void	replace(string line, string s1, string s2)
+
+void	ft_replace(string &line, string s1, string s2)
 {
 	size_t	pos;
-	
+
 	while ((pos = line.find(s1)) != string::npos)		
 	{
 		line.erase(pos, s1.length());
@@ -25,7 +31,6 @@ void	replace(string line, string s1, string s2)
 
 int	main(int c, char **argv)
 {
-	(void)c;
 	if (c != 4)
 	{
 		cout << "Incorrect argument amount\n";
@@ -49,7 +54,7 @@ int	main(int c, char **argv)
 	string str;
 	while (getline(file, str))
 	{
-		replace(str, argv[2], argv[3]);
+		ft_replace(str, argv[2], argv[3]);
 		if (file.eof())
 			new_file << str;
 		else
